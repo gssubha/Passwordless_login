@@ -2,8 +2,7 @@
 
 This project is a secure and efficient passwordless authentication system built using Python Flask, which replaces traditional password logins with a more user-friendly email-based OTP (One-Time Password) approach. The application enables users to authenticate themselves by simply entering their email address, receiving a six-digit OTP via email, and verifying it within a set time limit. This ensures a streamlined login process while maintaining a good level of security for basic use cases.
 
-
-💡 Key Features
+💡 KEY FEATURES
 
 🔑 Passwordless Authentication using email-based OTP
 
@@ -22,7 +21,7 @@ This project is a secure and efficient passwordless authentication system built 
 🎨 Responsive Frontend UI with professional HTML, CSS, JS
 
 
-🛠️ Tech Stack Used
+🛠️ TECH STACK USED
 
 Frontend: HTML, CSS, JavaScript
 
@@ -33,7 +32,7 @@ Database: SQLite
 Email Service: Gmail SMTP (with App Password)
 
 
-🔄 Authentication Flow (How It Works)
+🔄 AUTHENTICATION FLOW (How It Works)
 
 User lands on the homepage and enters their email address.
 
@@ -50,13 +49,13 @@ If the OTP is incorrect or expired, appropriate flash messages inform the user.
 A Resend OTP button is shown after the 60-second timer completes, allowing the user to request a new code if needed.
 
 
-📁 Project Structure
+📁 PROJECT STRUCTURE
 
 passwordless_login
 
 │
 
-├── app.py                    # Main Flask application logic
+├── app.py                      # Main Flask application logic
 
 ├── templates/                # Jinja2 templates for frontend rendering
 
@@ -77,25 +76,25 @@ passwordless_login
 └── README.md                 # Project documentation
 
 
-⚙️ Installation & Setup
+⚙️ INSTALLATION AND SETUP
 
 To run this project locally, follow these steps:
 
-Clone the repository
+CLONE THE REPOSITORY
 
 git clone https://github.com/your-username/passwordless-login.git
 cd passwordless-login
 
-Create a virtual environment (recommended)
+CREATE A VIRTUAL ENVIRONMENT
 
 python -m venv venv
 venv\Scripts\activate    # On Windows
 
-Install required dependencies
+INSTALL REQUIRED PACKAGES
 
 pip install -r requirements.txt
 
-Set up your Gmail credentials
+SETUP YOUR GMAIL CREDENTIALS
 
 In app.py, replace the placeholder values:
 
@@ -104,7 +103,7 @@ EMAIL_PASSWORD = "your-16-digit-app-password"
 
 👉 You must enable App Passwords in your Google account. Follow the official instructions to generate one.
 
-Run the Flask app
+RUN THE FLASK APP
 
 python app.py
 
@@ -113,7 +112,7 @@ Visit in your browser
 http://127.0.0.1:5000
 
 
-📸 Example Use Case
+📸 EXAMPLE USE CASES
 
 A user enters example@gmail.com and submits.
 
@@ -126,7 +125,7 @@ On success, they are redirected to a Dashboard.
 If time exceeds, OTP becomes invalid and must be resent.
 
 
-✅ Learning Outcomes
+✅ LLEARNING OUTCOMES
 
 By building this project, you'll gain hands-on experience with:
 
