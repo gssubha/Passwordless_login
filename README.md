@@ -1,4 +1,5 @@
-🔐 Passwordless OTP-Based Login System using Flask
+🔐 PASSWORDLESS OTP-BASED LOGIN SYSTEM USING FLASK
+
 This project is a secure and efficient passwordless authentication system built using Python Flask, which replaces traditional password logins with a more user-friendly email-based OTP (One-Time Password) approach. The application enables users to authenticate themselves by simply entering their email address, receiving a six-digit OTP via email, and verifying it within a set time limit. This ensures a streamlined login process while maintaining a good level of security for basic use cases.
 
 💡 Key Features
