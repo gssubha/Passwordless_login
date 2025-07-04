@@ -143,3 +143,16 @@ Clean, interactive frontend design
 SQLite database usage in Flask
 
 
+![Screenshot 2025-07-04 235549](https://github.com/user-attachments/assets/98fb74ac-fab2-4d86-993b-9a578d2c2ca0)
+
+![Screenshot 2025-07-04 235624](https://github.com/user-attachments/assets/b3ff2ad9-419d-4192-982a-c8677a99a7b9)
+
+![Screenshot 2025-07-04 235652](https://github.com/user-attachments/assets/201336ee-c3ef-45cf-9180-34ac84f304c8)
+
+![Screenshot 2025-07-04 235639](https://github.com/user-attachments/assets/f34892bc-4434-4784-895d-c54ab885fa13)
+
+![Screenshot 2025-07-04 235711](https://github.com/user-attachments/assets/459f9e1f-c2a2-42b7-9f84-4bba2dd672f5)
+
+![Screenshot 2025-07-04 235748](https://github.com/user-attachments/assets/deb13d45-886e-4cd5-b7fe-12ebc77eb9e6)
+
+
