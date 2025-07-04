@@ -99,6 +99,7 @@ SETUP YOUR GMAIL CREDENTIALS
 In app.py, replace the placeholder values:
 
 EMAIL_ADDRESS = "your-email@gmail.com"
+
 EMAIL_PASSWORD = "your-16-digit-app-password"
 
 👉 You must enable App Passwords in your Google account. Follow the official instructions to generate one.
