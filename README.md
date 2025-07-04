@@ -56,25 +56,25 @@ passwordless_login
 
 │
 
-├── app.py                  # Main Flask application logic
+├── app.py                    # Main Flask application logic
 
-├── templates/              # Jinja2 templates for frontend rendering
+├── templates/                # Jinja2 templates for frontend rendering
 
-│   ├── index.html          # Email input form
+│   ├── index.html            # Email input form
 
-│   ├── otp.html            # OTP verification form
+│   ├── otp.html              # OTP verification form
 
-│   └── dashboard.html      # Protected user dashboard
+│   └── dashboard.html        # Protected user dashboard
 
-├── static/                 # CSS and JavaScript files
+├── static/                   # CSS and JavaScript files
 
-│   ├── style.css           # Frontend styling
+│   ├── style.css             # Frontend styling
 
-│   └── timer.js            # JS logic for countdown and resend button
+│   └── timer.js              # JS logic for countdown and resend button
 
-├── venv/                   # Virtual environment (optional but recommended)
+├── venv/                     # Virtual environment (optional but recommended)
 
-└── README.md               # Project documentation
+└── README.md                 # Project documentation
 
 
 ⚙️ Installation & Setup
