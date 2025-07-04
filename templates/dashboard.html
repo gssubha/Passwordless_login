@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .dashboard-container {
+            width: 80%;
+            margin: auto;
+            padding: 2rem;
+            background: #fefefe;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 12px;
+        }
+        .dashboard-container h2 {
+            margin-bottom: 1rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 0.8rem;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .logout-btn {
+            margin-top: 2rem;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>👋 Welcome, {{ data.email }}</h2>
+        <p><strong>Login Time:</strong> {{ data.login_time }}</p>
+
+        <h3>📊 Recent Login Activity</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Device</th>
+                    <th>Login Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for login in data.recent_logins %}
+                <tr>
+                    <td>{{ login.device }}</td>
+                    <td>{{ login.time }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</body>
+</html>

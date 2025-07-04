@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enter OTP</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>✅ OTP Verification</h2>
+    <form method="POST" action="/verify">
+      <input type="text" name="otp" placeholder="Enter 6-digit OTP" maxlength="6" pattern="\d{6}" required>
+      <button type="submit">Verify OTP</button>
+    </form>
+    
+    <form method="POST" action="/resend">
+        <button id="resendBtn" type="submit" class="disabled-btn" disabled>Resend OTP</button>
+    </form>
+
+    <p id="countdown" style="color: #555; font-size: 14px; margin-bottom: 8px;"></p>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul>
+          {% for category, message in messages %}
+            <li class="{{ category }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <script>
+    const resendBtn = document.getElementById("resendBtn");
+    const countdown = document.getElementById("countdown");
+  
+    let remaining = 60; // 60 seconds countdown
+
+    function updateTimer() {
+        if (remaining <= 0) {
+        countdown.textContent = "You can now resend the OTP.";
+        resendBtn.disabled = false;
+        resendBtn.classList.remove("disabled-btn");
+        resendBtn.classList.add("enabled-btn");
+        return;
+        }
+
+    countdown.textContent = `Resend OTP in ${remaining} sec`;
+    resendBtn.disabled = true;
+    resendBtn.classList.add("disabled-btn");
+    resendBtn.classList.remove("enabled-btn");
+    remaining--;
+    }
+    
+    updateTimer(); // run once on load
+    const interval = setInterval(updateTimer, 1000);
+  </script>
+  
+</body>
+</html>
