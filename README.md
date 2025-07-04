@@ -54,15 +54,25 @@ A Resend OTP button is shown after the 60-second timer completes, allowing the u
 
 passwordless_login/
 │
+
 ├── app.py                  # Main Flask application logic
+
 ├── templates/              # Jinja2 templates for frontend rendering
+
 │   ├── index.html          # Email input form
+
 │   ├── otp.html            # OTP verification form
+
 │   └── dashboard.html      # Protected user dashboard
+
 ├── static/                 # CSS and JavaScript files
+
 │   ├── style.css           # Frontend styling
+
 │   └── timer.js            # JS logic for countdown and resend button
+
 ├── venv/                   # Virtual environment (optional but recommended)
+
 └── README.md               # Project documentation
 
 
