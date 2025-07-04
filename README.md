@@ -52,7 +52,8 @@ A Resend OTP button is shown after the 60-second timer completes, allowing the u
 
 📁 Project Structure
 
-passwordless_login/
+passwordless_login
+
 │
 
 ├── app.py                  # Main Flask application logic
