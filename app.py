@@ -18,8 +18,8 @@ Session(app)
 db=SQLAlchemy(app)
 
 # Replace with your real Gmail and app password
-EMAIL_ADDRESS = "misamizami1125@gmail.com"
-EMAIL_PASSWORD = "lpddcidqlsioypuh"
+EMAIL_ADDRESS = "your-email@gmail.com"
+EMAIL_PASSWORD = "your-16-digit-app-password"
 
 class OTPRecord(db.Model):
     id = db.Column(db.Integer, primary_key=True)
