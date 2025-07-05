@@ -153,7 +153,8 @@ SQLite database usage in Flask
 
 ![Screenshot 2025-07-04 235711](https://github.com/user-attachments/assets/459f9e1f-c2a2-42b7-9f84-4bba2dd672f5)
 
-![WhatsApp Image 2025-07-05 at 15 41 00_5f354572](https://github.com/user-attachments/assets/4f5af179-6a58-48a6-9350-a9610a6200b3)
+![Screenshot 2025-07-04 235748](https://github.com/user-attachments/assets/454cda41-b65c-45ff-b9d3-0b50c000c283)
+
 
 
 
