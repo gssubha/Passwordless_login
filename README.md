@@ -1,157 +1,136 @@
-🔐 PASSWORDLESS OTP-BASED LOGIN SYSTEM USING FLASK
+ # 🔐 Passwordless OTP-Based Login System using Flask ✉️✨
 
-This project is a secure and efficient passwordless authentication system built using Python Flask, which replaces traditional password logins with a more user-friendly email-based OTP (One-Time Password) approach. The application enables users to authenticate themselves by simply entering their email address, receiving a six-digit OTP via email, and verifying it within a set time limit. This ensures a streamlined login process while maintaining a good level of security for basic use cases.
+Passwordless Login System is a Flask-based secure authentication tool that replaces traditional password fields with a more user-friendly One-Time Password (OTP) delivered via email. The system uses email verification and OTP expiration logic to ensure authentication is simple, efficient, and secure for basic applications like portals, forms, or dashboards.
 
-💡 KEY FEATURES
+---
 
-🔑 Passwordless Authentication using email-based OTP
+## 💡 Key Features
 
-⏳ OTP Expiry System (default: 60 seconds)
+- 🔑 No password required — login through a 6-digit OTP sent to your email
+- ⏱️ OTP expiry logic with 60-second countdown
+-🔄 Resend OTP button enabled after timer ends
+- 🧠 Session handling with proper user tracking
+- 📬 Gmail SMTP integration for reliable email delivery
+- 🔐 Secure flash messaging and input validation
+- 📊 OTP data storage using SQLite backend
+- 🎨 Sleek front-end UI using HTML, CSS, JavaScript
+- 📱 Mobile responsive and user-friendly interface
 
-🔄 Resend OTP option after cooldown period
+---
 
-🧠 Session Management to track authenticated users
+## 🛠️ Core Technologies Used
+| Layer     | Tools & Libraries                           | Identifier |
+| --------- | ------------------------------------------- | ----- |
+| Backend   | Flask, Python                               | 🐍    |
+| Frontend  | HTML, CSS, JavaScript                       | 🎨    |
+| Database  | SQLite (`OTPRecord` model using SQLAlchemy) | 🗃️   |
+| Email API | Gmail SMTP (with App Password)              | 📧    |
+| Security  | Session cookies, OTP expiry, app passwords  | 🛡️   |
 
-❌ OTP Expiration Handling and validation
+---
 
-📬 Email Integration using Gmail SMTP server
+## 📁 File Structure & Components
+| File / Folder              | Role & Description                                       | Identifier |
+| -------------------------- | -------------------------------------------------------- | ----- |
+| `app.py`                   | Main backend logic, routes, OTP generation, session mgmt | 🧠    |
+| `templates/index.html`     | Email input form for initiating login                    | 📝    |
+| `templates/otp.html`       | OTP verification page with countdown + resend logic      | 🔐    |
+| `templates/dashboard.html` | Protected user area after login success                  | 📊    |
+| `static/style.css`         | Design and responsive layout                             | 🎨    |
+| `static/timer.js`          | Countdown timer + button enable logic                    | ⏲️    |
+| `venv/`                    | Python virtual environment (recommended)                 | 🧪    |
+| `README.md`                | Complete project documentation                           | 📘    |
 
-🧱 SQLite Database to store OTP entries and expiration
+---
+## 🔄 Authentication Flow
 
-🎨 Responsive Frontend UI with professional HTML, CSS, JS
+User enters Email 
 
+↓
 
-🛠️ TECH STACK USED
+Server generates OTP → Stores in DB with 60s expiry
 
-Frontend: HTML, CSS, JavaScript
+↓
 
-Backend: Python with Flask
+Email with OTP sent via Gmail SMTP
 
-Database: SQLite
+↓
 
-Email Service: Gmail SMTP (with App Password)
+User enters OTP on /verify page
 
+↓
 
-🔄 AUTHENTICATION FLOW (How It Works)
+OTP validity checked  →  Session created
 
-User lands on the homepage and enters their email address.
+↓
 
-The server generates a secure OTP and sends it to the provided email using Gmail's SMTP server.
+User redirected to Dashboard or error shown
 
-The OTP is stored in the SQLite database with a timestamp set to expire after 60 seconds.
+---
 
-The user is redirected to a verification page where they can enter the OTP.
+## ✅ Learning Outcomes
 
-The server checks the entered OTP against the most recent one sent. If the OTP is valid and within the expiration time, the user is successfully logged in.
+### By completing this project, you will learn:
+- How to develop production-style web apps using Flask
+- OTP generation and expiry management
+- Connecting Flask with SQLite using SQLAlchemy
+- How to send emails with Gmail SMTP + secure app passwords
+- JavaScript-based timers and button state toggling
+- Building fully responsive frontends with interactive feedback
 
-If the OTP is incorrect or expired, appropriate flash messages inform the user.
+---
 
-A Resend OTP button is shown after the 60-second timer completes, allowing the user to request a new code if needed.
-
-
-📁 PROJECT STRUCTURE
-
-passwordless_login
-
-│
-
-├── app.py                      # Main Flask application logic
-
-├── templates/                # Jinja2 templates for frontend rendering
-
-│   ├── index.html            # Email input form
-
-│   ├── otp.html              # OTP verification form
-
-│   └── dashboard.html        # Protected user dashboard
-
-├── static/                   # CSS and JavaScript files
-
-│   ├── style.css             # Frontend styling
-
-│   └── timer.js              # JS logic for countdown and resend button
-
-├── venv/                     # Virtual environment (optional but recommended)
-
-└── README.md                 # Project documentation
-
-
-⚙️ INSTALLATION AND SETUP
-
-To run this project locally, follow these steps:
-
-CLONE THE REPOSITORY
-
+## ⚙️ Setup & Execution
+### Step 1: Clone the repository
+```bash
 git clone https://github.com/your-username/passwordless-login.git
 cd passwordless-login
-
-CREATE A VIRTUAL ENVIRONMENT
-
+```
+### Step 2: Create a virtual environment (recommended)
+```bash
 python -m venv venv
-venv\Scripts\activate    # On Windows
-
-INSTALL REQUIRED PACKAGES
-
+venv\Scripts\activate  # On Windows
+```
+### Step 3: Install dependencies
+```bash
 pip install -r requirements.txt
-
-SETUP YOUR GMAIL CREDENTIALS
-
-In app.py, replace the placeholder values:
-
+```
+### Step 4: Set up email credentials in app.py
+```bash
 EMAIL_ADDRESS = "your-email@gmail.com"
-
-EMAIL_PASSWORD = "your-16-digit-app-password"
-
-👉 You must enable App Passwords in your Google account. Follow the official instructions to generate one.
-
-RUN THE FLASK APP
-
+EMAIL_PASSWORD = "your-app-password"  # From Google App Passwords
+```
+### Step 5: Run the Flask app
+```bash
 python app.py
+```
 
-Visit in your browser
+🧭 Open browser and visit: http://127.0.0.1:5000
 
-http://127.0.0.1:5000
+---
+## 📌 Important Note
+### 🔐 This project uses Gmail’s SMTP server. To send emails:
+- Enable 2-Step Verification on your Google account
+- Generate a 16-digit App Password
+- Use this app password in EMAIL_PASSWORD (not your normal password)
 
-
-📸 EXAMPLE USE CASES
-
-A user enters example@gmail.com and submits.
-
-An email arrives with: Your OTP is 348921.
-
-They input the OTP within 60 seconds.
-
-On success, they are redirected to a Dashboard.
-
-If time exceeds, OTP becomes invalid and must be resent.
-
-
-✅ LLEARNING OUTCOMES
-
-By building this project, you'll gain hands-on experience with:
-
-Real-world Flask application development
-
-Integrating Python with external APIs (SMTP)
-
-OTP generation, validation, and expiration handling
-
-Secure session tracking
-
-Clean, interactive frontend design
-
-SQLite database usage in Flask
-
-
+  ---
+  
 ![Screenshot 2025-07-04 235549](https://github.com/user-attachments/assets/98fb74ac-fab2-4d86-993b-9a578d2c2ca0)
 
+---
 ![Screenshot 2025-07-04 235624](https://github.com/user-attachments/assets/b3ff2ad9-419d-4192-982a-c8677a99a7b9)
 
+---
 ![Screenshot 2025-07-04 235652](https://github.com/user-attachments/assets/201336ee-c3ef-45cf-9180-34ac84f304c8)
 
+---
 ![Screenshot 2025-07-04 235639](https://github.com/user-attachments/assets/f34892bc-4434-4784-895d-c54ab885fa13)
 
+---
 ![Screenshot 2025-07-04 235711](https://github.com/user-attachments/assets/459f9e1f-c2a2-42b7-9f84-4bba2dd672f5)
+
+---
 
 ![Screenshot 2025-07-04 235748](https://github.com/user-attachments/assets/454cda41-b65c-45ff-b9d3-0b50c000c283)
 
